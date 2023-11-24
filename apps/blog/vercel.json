@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "remix",
+  "regions": ["fra1"],
+  "buildCommand": "pnpm turbo build"
+}

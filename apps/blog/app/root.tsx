@@ -1,7 +1,4 @@
-import type {
-  V2_MetaFunction as V2MetaFunction,
-  LinksFunction,
-} from "@remix-run/node";
+import type { MetaFunction, LinksFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -9,24 +6,29 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
-import { Analytics } from "@vercel/analytics/react";
-import styles from "./styles.css";
+} from '@remix-run/react';
+import styles from '~/styles.css';
 
-export const meta: V2MetaFunction = () => [
+export const config = { runtime: 'edge' };
+
+export const meta: MetaFunction = () => [
   {
-    charset: "utf-8",
-    title: "Blog | Kitchen Sink",
-    viewport: "width=device-width,initial-scale=1",
+    title: 'Blog | Kitchen Sink',
   },
 ];
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
-export default function App(): JSX.Element {
+export default function App() {
   return (
     <html lang="en">
       <head>
+        <meta charSet="utf-8" />
+        <meta name="robots" content="noindex" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1, maximum-scale=1"
+        />
         <Meta />
         <Links />
       </head>
@@ -35,7 +37,6 @@ export default function App(): JSX.Element {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <Analytics />
       </body>
     </html>
   );

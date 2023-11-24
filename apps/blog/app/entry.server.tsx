@@ -1,18 +1,20 @@
-import handleRequest from "@vercel/remix-entry-server";
-import { RemixServer } from "@remix-run/react";
-import type { EntryContext } from "@remix-run/server-runtime";
+import { type EntryContext } from '@remix-run/node';
+import { RemixServer } from '@remix-run/react';
+import { handleRequest as remixHandleRequest } from '@vercel/remix';
 
-export default function entry(
+const handleRequest = async (
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext
-): Promise<unknown> {
+) => {
   const remixServer = <RemixServer context={remixContext} url={request.url} />;
-  return handleRequest(
+  return remixHandleRequest(
     request,
     responseStatusCode,
     responseHeaders,
     remixServer
   );
-}
+};
+
+export default handleRequest;

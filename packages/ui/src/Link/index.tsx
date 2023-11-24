@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
@@ -15,8 +15,8 @@ export function Link({
   return (
     <a
       href={href}
-      rel={newTab ? "noreferrer" : undefined}
-      target={newTab ? "_blank" : undefined}
+      rel={newTab ? 'noreferrer' : undefined}
+      target={newTab ? '_blank' : undefined}
       {...other}
     >
       {children}
