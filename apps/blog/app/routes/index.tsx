@@ -1,5 +1,5 @@
 import { CounterButton } from 'ui/counter-button';
-import { Link } from 'ui/link';
+import { Link } from 'ui/link/subpath';
 
 export default function Index() {
   return (

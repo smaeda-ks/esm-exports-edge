@@ -20,7 +20,7 @@
       "types": "./dist/CounterButton/index.d.ts",
       "import": "./dist/CounterButton/index.js"
     },
-    "./link": {
+    "./link/subpath": {
       "types": "./dist/Link/index.d.ts",
       "import": "./dist/Link/index.js"
     }
