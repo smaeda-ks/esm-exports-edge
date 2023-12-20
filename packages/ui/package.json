@@ -16,19 +16,27 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./counter-button": {
+    "./CounterButton": {
       "types": "./dist/CounterButton/index.d.ts",
       "import": "./dist/CounterButton/index.js"
     },
-    "./link/subpath": {
+    "./Link": {
       "types": "./dist/Link/index.d.ts",
       "import": "./dist/Link/index.js"
+    },
+    "./Link/subfolder": {
+      "types": "./dist/Link2/subfolder/index.d.ts",
+      "import": "./dist/Link2/subfolder/index.js"
+    },
+    "./dist/Link/subfolder": {
+      "types": "./dist/Link2/subfolder/index.d.ts",
+      "import": "./dist/Link2/subfolder/index.js"
     }
   },
   "scripts": {
-    "build": "tsup --entry src/index.tsx --entry src/CounterButton/index.tsx --entry src/Link/index.tsx --format esm --dts --external react",
+    "build": "tsup --entry src/index.tsx --entry src/CounterButton/index.tsx --entry src/Link/index.tsx --entry src/Link2/subfolder/index.tsx --format esm --dts --external react",
     "clean": "rm -rf dist",
-    "dev": "tsup src/index.tsx --entry src/CounterButton/index.tsx --entry src/Link/index.tsx --format esm --watch --dts --external react",
+    "dev": "tsup src/index.tsx --entry src/CounterButton/index.tsx --entry src/Link/index.tsx --entry src/Link2/subfolder/index.tsx --format esm --watch --dts --external react",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src/"
   },
